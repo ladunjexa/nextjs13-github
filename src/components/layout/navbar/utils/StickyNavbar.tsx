@@ -118,7 +118,7 @@ const StickyNavbar = () => {
                   {label}
                   <div
                     className={`w-10/12 max-lg:hidden mx-auto mt-1 h-[1px] scale-0 transition ease-in duration-200 ${
-                      isActive && "scale-100 bg-white"
+                      isActive && interactionState.hovered !== id && "scale-100 bg-white"
                     } ${interactionState.hovered === id && "scale-100 bg-blue-500"}`}
                   />
                 </a>
