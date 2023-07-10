@@ -60,6 +60,8 @@
   - [Folder Structure](#bangbang-folder-structure)
   - [Tech Stack](#space_invader-tech-stack)
 - [Getting Started](#toolbox-getting-started)
+  - [Installation](#gear-installation)
+  - [Run Locally](#running-run-locally)
 - [Screenshots](#camera-screenshots)
 - [Contributing](#wave-contributing)
 - [License](#warning-license)
@@ -167,6 +169,44 @@ src/
 <!-- Getting Started -->
 
 ## :toolbox: Getting Started
+
+### :gear: Installation
+
+#### Step 1:
+Download or clone this repo by using the command below:
+
+```bash
+ https://github.com/ladunjexa/GitHub-Webpage.git
+```
+
+#### Step 2:
+
+This webapp using NPM (Node Package Manager), therefore, make sure that Node.js is installed by execute the following command in console:
+
+```bash
+  node -v
+```
+
+#### Step 3:
+
+In root folder execute the following command to get the required packages:
+
+```bash
+  npm install
+```
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+#### Step 1:
+
+Go to root folder and execute the following command in order to run the webapp:
+
+```bash
+  npm run dev
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
