@@ -1,0 +1,76 @@
+import { motion } from "framer-motion";
+
+import type { CopilotBlockProps } from "@types";
+
+// prettier-ignore
+const CopilotBlock = ({ container, item, count, drawId = 1 }: CopilotBlockProps) => {
+  return (
+    <div
+    key={count}
+      className="flex-1 overflow-x-auto text-white rounded-b-md "
+    >
+      {drawId === 1 ? 
+      (
+        <>
+          <pre className=""><span className="code-editor-line-mktg"><span className="pl-k">import</span> <span className="pl-s1">matplotlib</span>.<span className="pl-s1">pyplot</span> <span className="pl-k">as</span> <span className="pl-s1">plt</span></span></pre>
+          <pre className=""><span className="code-editor-line-mktg"></span></pre>
+          <pre className=""><motion.span variants={container} initial='hidden' whileInView='show' className="code-editor-line-mktg"><motion.span variants={item} className="pl-k js-type-letters">def</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-en js-type-letters">draw_scatterplot</motion.span><motion.span variants={item} className="js-type-letters">(</motion.span><motion.span variants={item} className="pl-s1 js-type-letters">x_values</motion.span><motion.span variants={item} className="js-type-letters">, </motion.span><motion.span variants={item} className="pl-s1 js-type-letters">y_values</motion.span><motion.span variants={item} className="js-type-letters">):</motion.span></motion.span></pre>
+          <motion.div initial={{opacity:0, y:40}} whileInView={{opacity:1, y:0}} transition={{delay:1, type:'just'}}>
+          <pre className="bg-[#388bfd1a]"><span>    <span className="pl-s1">plt</span>.<span className="pl-en">scatter</span>(<span className="pl-s1">x_values</span>, <span className="pl-s1">y_values</span>, <span className="pl-s1">s</span><span className="pl-c1">=</span><span className="pl-c1">20</span>)</span></pre>
+          <pre className="bg-[#388bfd1a]"><span>    <span className="pl-s1">plt</span>.<span className="pl-en">title</span>(<span className="pl-s">&ldquo;Scatter Plot&ldquo;</span>)</span></pre>
+          <pre className="bg-[#388bfd1a]"><span>    <span className="pl-s1">plt</span>.<span className="pl-en">xlabel</span>(<span className="pl-s">&ldquo;x values&ldquo;</span>)</span></pre>
+          <pre className="bg-[#388bfd1a]"><span>    <span className="pl-s1">plt</span>.<span className="pl-en">ylabel</span>(<span className="pl-s">&ldquo;y values&ldquo;</span>)</span></pre>
+          <pre className="bg-[#388bfd1a]"><span>    <span className="pl-s1">plt</span>.<span className="pl-en">show</span>()</span></pre>
+          <div className="rounded-tl-none  bg-[#1f6feb] absolute color-fg-on-emphasis rounded-md font-bold flex items-center js-type-row p-2 f5 row-is-visible">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="currentColor" aria-hidden="true" className="mr-1"><path d="M5.5 8.75282C5.5 8.33863 5.83569 8.00282 6.25 8.00282C6.66415 8.00282 7 8.33861 7 8.75282V10.2489C7 10.6631 6.66431 10.9989 6.25 10.9989C5.83569 10.9989 5.5 10.6631 5.5 10.2489V8.75282Z"></path><path d="M10.5 8.75282C10.5 8.33863 10.1643 8.00282 9.75 8.00282C9.33551 8.00282 9 8.33881 9 8.75282V10.2489C9 10.6631 9.33569 10.9989 9.75 10.9989C10.1643 10.9989 10.5 10.6631 10.5 10.2489V8.75282Z"></path><path fillRule="evenodd" clipRule="evenodd" d="M5.04443 0.0297942C6.05371 -0.0606599 7.3667 0.00708908 8 0.919809C8.6333 0.00708908 9.94629 -0.0606599 10.9556 0.0297942C12.1118 0.145761 13.0854 0.543222 13.6328 1.12708C14.5825 2.1648 14.6267 4.34144 14.1685 5.5398C14.2146 5.74464 14.2585 5.95216 14.29 6.17176C15.1366 6.39482 16 7.59408 16 8.45167V10.0717C16 10.5215 15.79 10.9314 15.4199 11.2114C13.3044 12.7835 10.6672 14.0012 8 14.0012C5.33276 14.0012 2.69556 12.7835 0.580078 11.2114C0.209961 10.9314 0 10.5215 0 10.0717V8.45167C0 7.59408 0.863428 6.39482 1.70996 6.17176C1.7416 5.95216 1.7855 5.74461 1.83154 5.5398C1.37329 4.34144 1.41748 2.1648 2.36719 1.12708C2.91455 0.543222 3.88818 0.145761 5.04443 0.0297942ZM8 12.5014C9.93994 12.5014 11.8501 11.6426 13 11.0028V6.65907C11.1445 7.37782 9.00928 7.00721 8.00146 5.34229H7.99854C6.99072 7.00721 4.85547 7.37782 3 6.65907V11.0028C4.1499 11.6426 6.06006 12.5014 8 12.5014ZM5 5.49879C6.64062 5.49879 7 4.20582 7 3.01832C7 1.91517 6.8125 1.50392 5.53125 1.50392C3.31396 1.50392 3.04688 2.25282 3.04688 4.00282C3.04688 5.10597 3.35938 5.49879 5 5.49879ZM11 5.49879C9.35938 5.49879 9 4.20582 9 3.01832C9 1.91517 9.1875 1.50392 10.4688 1.50392C12.686 1.50392 12.9531 2.25282 12.9531 4.00282C12.9531 5.10597 12.6406 5.49879 11 5.49879Z"></path></svg>
+              Copilot
+          </div>
+          </motion.div>
+        </>
+      ) : 
+      drawId === 2 ? 
+      (
+        <>
+          <pre className=""><span className="code-editor-line-mktg d-inline-block"><span className="pl-k">const</span> <span className="pl-s1">seconds</span> <span className="pl-c1">=</span> <span className="pl-c1">3600</span></span></pre>
+          <pre className=""><motion.span variants={container} initial='hidden' whileInView='show' className="code-editor-line-mktg d-inline-block"><motion.span variants={item} className="pl-k js-type-letters">const</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-s1 js-type-letters">minutes</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-c1 js-type-letters">=</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-s1 js-type-letters">seconds</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-c1 js-type-letters">/</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-c1 js-type-letters">60</motion.span></motion.span></pre>
+          <motion.div initial={{opacity:0, y:40}} whileInView={{opacity:1, y:0}} transition={{delay:1, type:'just'}}>
+          <pre className="bg-[#388bfd1a]"><span><span className="pl-k">const</span> <span className="pl-s1">hours</span> <span className="pl-c1">=</span> <span className="pl-s1">minutes</span> <span className="pl-c1">/</span> <span className="pl-c1">60</span></span></pre>
+          <pre className="bg-[#388bfd1a]"><span><span className="pl-k">const</span> <span className="pl-s1">days</span> <span className="pl-c1">=</span> <span className="pl-s1">hours</span> <span className="pl-c1">/</span> <span className="pl-c1">24</span></span></pre>
+          <pre className="bg-[#388bfd1a]"><span><span className="pl-k">const</span> <span className="pl-s1">weeks</span> <span className="pl-c1">=</span> <span className="pl-s1">days</span> <span className="pl-c1">/</span> <span className="pl-c1">7</span></span></pre>
+          <pre className="bg-[#388bfd1a]"><span><span className="pl-k">const</span> <span className="pl-s1">months</span> <span className="pl-c1">=</span> <span className="pl-s1">days</span> <span className="pl-c1">/</span> <span className="pl-c1">30</span></span></pre>
+          <pre className="bg-[#388bfd1a]"><span><span className="pl-k">const</span> <span className="pl-s1">years</span> <span className="pl-c1">=</span> <span className="pl-s1">months</span> <span className="pl-c1">/</span> <span className="pl-c1">12</span></span></pre>
+          <div className="rounded-tl-none shadow-xl bg-[#1f6feb] absolute color-fg-on-emphasis rounded-md font-bold flex items-center js-type-row p-2 f5 row-is-visible">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="currentColor" aria-hidden="true" className="mr-1"><path d="M5.5 8.75282C5.5 8.33863 5.83569 8.00282 6.25 8.00282C6.66415 8.00282 7 8.33861 7 8.75282V10.2489C7 10.6631 6.66431 10.9989 6.25 10.9989C5.83569 10.9989 5.5 10.6631 5.5 10.2489V8.75282Z"></path><path d="M10.5 8.75282C10.5 8.33863 10.1643 8.00282 9.75 8.00282C9.33551 8.00282 9 8.33881 9 8.75282V10.2489C9 10.6631 9.33569 10.9989 9.75 10.9989C10.1643 10.9989 10.5 10.6631 10.5 10.2489V8.75282Z"></path><path fillRule="evenodd" clipRule="evenodd" d="M5.04443 0.0297942C6.05371 -0.0606599 7.3667 0.00708908 8 0.919809C8.6333 0.00708908 9.94629 -0.0606599 10.9556 0.0297942C12.1118 0.145761 13.0854 0.543222 13.6328 1.12708C14.5825 2.1648 14.6267 4.34144 14.1685 5.5398C14.2146 5.74464 14.2585 5.95216 14.29 6.17176C15.1366 6.39482 16 7.59408 16 8.45167V10.0717C16 10.5215 15.79 10.9314 15.4199 11.2114C13.3044 12.7835 10.6672 14.0012 8 14.0012C5.33276 14.0012 2.69556 12.7835 0.580078 11.2114C0.209961 10.9314 0 10.5215 0 10.0717V8.45167C0 7.59408 0.863428 6.39482 1.70996 6.17176C1.7416 5.95216 1.7855 5.74461 1.83154 5.5398C1.37329 4.34144 1.41748 2.1648 2.36719 1.12708C2.91455 0.543222 3.88818 0.145761 5.04443 0.0297942ZM8 12.5014C9.93994 12.5014 11.8501 11.6426 13 11.0028V6.65907C11.1445 7.37782 9.00928 7.00721 8.00146 5.34229H7.99854C6.99072 7.00721 4.85547 7.37782 3 6.65907V11.0028C4.1499 11.6426 6.06006 12.5014 8 12.5014ZM5 5.49879C6.64062 5.49879 7 4.20582 7 3.01832C7 1.91517 6.8125 1.50392 5.53125 1.50392C3.31396 1.50392 3.04688 2.25282 3.04688 4.00282C3.04688 5.10597 3.35938 5.49879 5 5.49879ZM11 5.49879C9.35938 5.49879 9 4.20582 9 3.01832C9 1.91517 9.1875 1.50392 10.4688 1.50392C12.686 1.50392 12.9531 2.25282 12.9531 4.00282C12.9531 5.10597 12.6406 5.49879 11 5.49879Z"></path></svg>
+              Copilot
+          </div>
+          </motion.div>
+      </>
+    ) : 
+    drawId == 3 ? 
+    (
+      <>
+        <pre className=""><span className="code-editor-line-mktg d-inline-block"><span className="pl-k">package</span> main</span></pre>
+        <pre className=""><motion.span variants={container} initial='hidden' whileInView='show' className="code-editor-line-mktg d-inline-block"><motion.span variants={item} className="js-type-letters">  </motion.span><motion.span variants={item} className="pl-k js-type-letters">func</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-en js-type-letters">Memoize</motion.span><motion.span variants={item} className="js-type-letters">(</motion.span><motion.span variants={item} className="pl-s1 js-type-letters">fn</motion.span><motion.span variants={item} className="js-type-letters"> </motion.span><motion.span variants={item} className="pl-k js-type-letters">func</motion.span><motion.span variants={item} className="js-type-letters">{'('}</motion.span><motion.span variants={item} className="pl-smi js-type-letters">int</motion.span><motion.span variants={item} className="js-type-letters">) </motion.span><motion.span variants={item} className="pl-smi js-type-letters">int</motion.span><motion.span variants={item} className="js-type-letters">) </motion.span><motion.span variants={item} className="pl-k js-type-letters">func</motion.span><motion.span variants={item} className="js-type-letters">{'('}</motion.span><motion.span variants={item} className="pl-smi js-type-letters">int</motion.span><motion.span variants={item} className="js-type-letters">{')'} </motion.span><motion.span variants={item} className="pl-smi js-type-letters">int</motion.span><motion.span variants={item} className="js-type-letters"> {'{'} </motion.span></motion.span></pre>
+        <motion.div initial={{opacity:0, y:40}} whileInView={{opacity:1, y:0}} transition={{delay:1.5, type:'just'}}>
+        <pre className="bg-[#388bfd1a]"><span>      <span className="pl-s1">cache</span> <span className="pl-c1">:=</span> <span className="pl-en">make</span>(<span className="pl-k">map</span>[<span className="pl-smi">int</span>]<span className="pl-smi">int</span>)</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>      <span className="pl-k">return</span> <span className="pl-k">func</span>(<span className="pl-s1">n</span> <span className="pl-smi">int</span>) <span className="pl-smi">int</span> {'{'}</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>          <span className="pl-k">if</span> <span className="pl-s1">v</span>, <span className="pl-s1">ok</span> <span className="pl-c1">:=</span> <span className="pl-s1">cache</span>[<span className="pl-s1">n</span>]; <span className="pl-s1">ok</span>  {'{'}</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>              <span className="pl-k">return</span> <span className="pl-s1">v</span></span></pre>
+        <pre className="bg-[#388bfd1a]"><span>          {'}'}</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>          <span className="pl-s1">cache</span>[<span className="pl-s1">n</span>] <span className="pl-c1">=</span> <span className="pl-en">fn</span>(<span className="pl-s1">n</span>)</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>          <span className="pl-k">return</span> <span className="pl-s1">cache</span>[<span className="pl-s1">n</span>]</span></pre>
+        <pre className="bg-[#388bfd1a]"><span>      {'}'}</span></pre>
+        <pre className="bg-[#388bfd1a]"><span >  {'}'}</span></pre>
+        <div className="rounded-tl-none shadow-xl bg-[#1f6feb] absolute color-fg-on-emphasis rounded-md font-bold flex items-center js-type-row p-2 f5 row-is-visible">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="currentColor" aria-hidden="true" className="mr-1"><path d="M5.5 8.75282C5.5 8.33863 5.83569 8.00282 6.25 8.00282C6.66415 8.00282 7 8.33861 7 8.75282V10.2489C7 10.6631 6.66431 10.9989 6.25 10.9989C5.83569 10.9989 5.5 10.6631 5.5 10.2489V8.75282Z"></path><path d="M10.5 8.75282C10.5 8.33863 10.1643 8.00282 9.75 8.00282C9.33551 8.00282 9 8.33881 9 8.75282V10.2489C9 10.6631 9.33569 10.9989 9.75 10.9989C10.1643 10.9989 10.5 10.6631 10.5 10.2489V8.75282Z"></path><path fillRule="evenodd" clipRule="evenodd" d="M5.04443 0.0297942C6.05371 -0.0606599 7.3667 0.00708908 8 0.919809C8.6333 0.00708908 9.94629 -0.0606599 10.9556 0.0297942C12.1118 0.145761 13.0854 0.543222 13.6328 1.12708C14.5825 2.1648 14.6267 4.34144 14.1685 5.5398C14.2146 5.74464 14.2585 5.95216 14.29 6.17176C15.1366 6.39482 16 7.59408 16 8.45167V10.0717C16 10.5215 15.79 10.9314 15.4199 11.2114C13.3044 12.7835 10.6672 14.0012 8 14.0012C5.33276 14.0012 2.69556 12.7835 0.580078 11.2114C0.209961 10.9314 0 10.5215 0 10.0717V8.45167C0 7.59408 0.863428 6.39482 1.70996 6.17176C1.7416 5.95216 1.7855 5.74461 1.83154 5.5398C1.37329 4.34144 1.41748 2.1648 2.36719 1.12708C2.91455 0.543222 3.88818 0.145761 5.04443 0.0297942ZM8 12.5014C9.93994 12.5014 11.8501 11.6426 13 11.0028V6.65907C11.1445 7.37782 9.00928 7.00721 8.00146 5.34229H7.99854C6.99072 7.00721 4.85547 7.37782 3 6.65907V11.0028C4.1499 11.6426 6.06006 12.5014 8 12.5014ZM5 5.49879C6.64062 5.49879 7 4.20582 7 3.01832C7 1.91517 6.8125 1.50392 5.53125 1.50392C3.31396 1.50392 3.04688 2.25282 3.04688 4.00282C3.04688 5.10597 3.35938 5.49879 5 5.49879ZM11 5.49879C9.35938 5.49879 9 4.20582 9 3.01832C9 1.91517 9.1875 1.50392 10.4688 1.50392C12.686 1.50392 12.9531 2.25282 12.9531 4.00282C12.9531 5.10597 12.6406 5.49879 11 5.49879Z"></path></svg>
+            Copilot
+        </div>
+        </motion.div>
+      </>) : 
+    (<></>)
+    }
+    </div>
+  )
+}
+
+export default CopilotBlock;
