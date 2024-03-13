@@ -14,15 +14,15 @@
     "@react-spring/web": "^9.7.3",
     "autoprefixer": "10.4.14",
     "cobe": "^0.6.3",
-    "eslint": "8.44.0",
+    "eslint": "8.56.0",
     "eslint-config-next": "^12.0.4",
     "framer-motion": "^10.12.18",
-    "next": "13.4.8",
+    "next": "13.5.6",
     "postcss": "8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.1.6",
+    "typescript": "5.3.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
